@@ -42,22 +42,19 @@
                             <div class="menu" id="menu">
                                 <ul class="menu-list" id="menu-list">
                                     <li class="menu-item">
-                                        <a href="#hero" class="menu-link menu-active">Главная</a>
+                                        <a href="#hero" class="menu-link menu-active" data-goto=".hero">Главная</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="#services" class="menu-link">Услуги</a>
+                                        <a href="#services" class="menu-link" data-goto=".services">Услуги</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="#about" class="menu-link">Обо мне</a>
+                                        <a href="#portfolio" class="menu-link" data-goto=".portfolio">Портфолио</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="#portfolio" class="menu-link">Портфолио</a>
+                                        <a href="#review" class="menu-link" data-goto="reviews">Отзывы</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="#review" class="menu-link">Отзывы</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="#contacts" class="menu-link">Контакты</a>
+                                        <a href="#contacts" class="menu-link" data-goto="contacts">Контакты</a>
                                     </li>
                                     <a href="#" target="_blank" class="header-btn">
                                         Написать
@@ -79,7 +76,7 @@
                             <h1 class="hero-title">
                                 Создаем цифровые решения для вашего бизнеса
                             </h1>
-                            <p class="hero-desc">Я wersomd — разработчик, который помогает вашему бизнесу расти с
+                            <p class="hero-desc">Мы pacifist разработчики, который помогает вашему бизнесу расти с
                                 помощью инновационных мобильных приложений и
                                 веб-решений. Откройте новые возможности с индивидуальным подходом и современными
                                 технологиями.</p>
@@ -123,7 +120,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="service-item service-middle">
+                        <div class="service-item service-start">
                             <div class="service-text">
                                 <h4 class="service-name">
                                     Интеграция CRM-систем<br>(Bitrix24 AmoCRM)
@@ -137,7 +134,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="service-item service-middle">
+                        <div class="service-item service-start">
                             <div class="service-text">
                                 <h4 class="service-name">
                                     Разработка интернет-магазинов
@@ -152,7 +149,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="service-item service-bottom">
+                        <div class="service-item service-middle">
                             <div class="service-text">
                                 <h4 class="service-name">
                                     Консалтинг по автоматизации бизнес-процессов
@@ -167,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="service-item service-bottom">
+                        <div class="service-item service-middle">
                             <div class="service-text">
                                 <h4 class="service-name">
                                     Парсинг страниц
@@ -183,15 +180,161 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="service-item service-bottom">
+                            <div class="service-text">
+                                <h4 class="service-name">
+                                    Таргетированная реклама
+                                </h4>
+                                <p class="service-desc">
+                                    Описание: Используем продвинутые инструменты анализа аудитории и настроек, чтобы
+                                    добиться максимальной эффективности рекламных
+                                    кампаний.
+                                </p>
+                                <div class="service-desc">
+                                    Польза для бизнеса: Таргетированная реклама помогает привлекать целевых клиентов с
+                                    минимальными затратами, увеличивает конверсию и продажу,
+                                    а также улучшает узнаваемость бренда среди вашей ключевой аудитории.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-item service-bottom">
+                            <div class="service-text">
+                                <h4 class="service-name">
+                                    Дизайн сайтов
+                                </h4>
+                                <p class="service-desc">
+                                    Описание: Разрабатываем современные и функциональные сайты, которые подчеркивают
+                                    уникальность вашего бренда и привлекают внимание
+                                    посетителей.
+                                </p>
+                                <div class="service-desc">
+                                    Польза для бизнеса: Качественный веб-дизайн улучшает восприятие вашего бренда,
+                                    повышает доверие клиентов и увеличивает конверсию.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <section class="portfolio" id="portfolio">
+                <div class="container">
+                    <h2 class="portfolio-title">Портфолио</h2>
+                    <p class="portfolio-desc">
+                        В этом разделе собраны мои ключевые проекты и разработки, демонстрирующие
+                        мой опыт в создании современных
+                        веб-приложений, интеграции с CRM-системами и решения задач в сфере eCommerce и мобильных
+                        приложений. Здесь вы найдете
+                        примеры моих работ, отражающих мои навыки и подход к решению задач.
+                    </p>
+
+                    <div class="portfolio-items">
+                        <div class="portfolio-item">
+                            <a href="https://digix-ai.info" target="_blank">
+                                <h3 class="website-name">
+                                    Digix
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="portfolio-item">
+                            <a href="https://orkenmed.tilda.ws" target="_blank">
+                                <h3 class="website-name">
+                                    Orkenmed
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="portfolio-item">
+                            <a href="https://sapargroup.kz/" target="_blank">
+                                <h3 class="website-name">
+                                    Sapar Group
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="portfolio-item">
+                            <a href="https://maf-park.kz/" target="_blank">
+                                <h3 class="website-name">
+                                    Maf Park
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="portfolio-item">
+                            <a href="https://qazgroupservise.kz/" target="_blank">
+                                <h3 class="website-name">
+                                    KazGroupService
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="portfolio-item">
+                            <a href="https://korkem-alem.kz/" target="_blank">
+                                <h3 class="website-name">
+                                    Korkem alem
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews" id="reviews">
+                <div class="container">
+                    <h2 class="reviews-title">Отзывы</h2>
+                    <p class="reviews-desc">
+                        Отзывы клиентов о моих услугах и выполненных проектах.
+                    </p>
+
+                    <div class="reviews-items">
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="contacts" id="contacts">
+
+                <div class="contact-items">
+                    <div class="contact-left">
+                        <div class="contact-left-content">
+                            <div class="contact-left-title">
+                                Поможем расти вашему бизнесу
+                            </div>
+                            <a href="https://wa.me/77070171318" class="contact-left-btn" target="_blank">
+                                Написать
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-right">
+                        <div class="contact-right-content">
+                            <h2 class="contact-title">
+                                Контакты
+                            </h2>
+                            <p class="contact-desc">
+                                Мы проконсультируем вас по всем вопросам нашего продукта.
+                            </p>
+                            <div class="contact-address contact-item">
+
+                                +7 707 017 1318 <br>
+                                +7 707 798 3316
+                            </div>
+                            <div class="contact-address contact-item">
+
+                                г.Шымкент, ул.Назарбаева 49
+                            </div>
+                            <div class="contact-sale contact-item">
+                                wersomd.dev@gmail.com
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <hr class="gradient-hr">
         </main>
 
         <footer class="footer" id="footer">
             <div class="container">
-
+                <div class="copyright">
+                    © 2024 Pacifist Limited. Все права защищены.
+                </div>
             </div>
         </footer>
     </div>

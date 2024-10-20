@@ -11,6 +11,8 @@ body {
     font-family: "IBM Plex Sans", sans-serif;
     background-color: #000;
     color: #fff;
+
+    scroll-behavior: smooth;
 }
 
 ul,
@@ -197,6 +199,10 @@ main.main#main {
     transition: all .3s ease-in;
 }
 
+.header-btn:hover {
+    border-color: #00FFA3;
+}
+
 .hero-items {
     margin-top: 80px;
     display: flex;
@@ -258,13 +264,14 @@ main.main#main {
 .services-desc {
     margin-top: 10px;
     font-size: 18px;
+    line-height: 1.2;
 }
 
 .services-items {
     margin-top: 32px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 
     gap: 26px;
 }
@@ -273,12 +280,16 @@ main.main#main {
     grid-column: span 2 / span 2;
 }
 
-.service-middle {
+.service-top {
     grid-row-start: 2;
 }
 
-.service-bottom {
+.service-middle {
     grid-row-start: 3;
+}
+
+.service-bottom {
+    grid-row-start: 4;
 }
 
 .service-item {
@@ -327,4 +338,224 @@ main.main#main {
 .service-desc {
     font-size: 17px;
     line-height: 1.4;
+}
+
+.portfolio {
+    padding: 60px 0;
+}
+
+.portfolio-title {
+    font-size: 32px;
+}
+
+.portfolio-desc {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.portfolio-items {
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 260px;
+
+    border: 1px solid #fff;
+
+
+    cursor: pointer;
+
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.portfolio-item::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.portfolio-item:hover::after {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.website-name {
+    opacity: 0;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 1.4;
+    transition: all .3s ease-in;
+
+    position: relative;
+    z-index: 10;
+}
+
+.portfolio-item:hover .website-name {
+    opacity: 1;
+}
+
+.portfolio-item:nth-child(1) {
+    background-image: url('../images/portfolio/digix-bg.png');
+}
+
+.portfolio-item:nth-child(2) {
+    background-image: url('../images/portfolio/orkenmed-bg.png');
+}
+
+.portfolio-item:nth-child(3) {
+    background-image: url('../images/portfolio/sapar-kovka-bg.png');
+}
+
+.portfolio-item:nth-child(4) {
+    background-image: url('../images/portfolio/maf-park-bg.png');
+}
+
+.portfolio-item:nth-child(5) {
+    background-image: url('../images/portfolio/qazgroupservise-bg.png');
+}
+
+.portfolio-item:nth-child(6) {
+    background-image: url('../images/portfolio/korkem-alem-bg.png');
+}
+
+
+.reviews {
+    padding: 30px 0;
+
+    background: linear-gradient(0% #19161C, 100% 000000);
+}
+
+
+.reviews-title {
+    font-size: 32px;
+}
+
+.reviews-desc {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.reviews-items {
+    margin-top: 40px;
+}
+
+.contacts {
+    padding: 30px 0;
+}
+
+.contacts-title {
+    font-size: 32px;
+}
+
+.contact-items {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.contact-left {
+    width: 100%;
+    background: linear-gradient(-45deg, #06B67A, #04fea7, #ff0000);
+    background-size: 400% 400%;
+    border-radius: 0 3px 3px 0;
+    -webkit-animation: gradient-animation 10s ease infinite;
+    -moz-animation: gradient-animation 10s ease infinite;
+    animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.contact-left-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contact-left-title {
+    font-size: 28px;
+}
+
+.contact-left-btn {
+
+    margin-top: 40px;
+    border-radius: 3px;
+    padding: 8px 60px;
+    border: 1px solid #fff;
+    transition: all .3s ease-in-out;
+    color: #fff;
+    font-size: 20px;
+}
+
+.contact-right {
+    width: 100%;
+    background: var(--black);
+}
+
+.contact-right-content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+}
+
+.contact-title {
+    font-size: 32px;
+}
+
+.contact-desc,
+.contact-item {
+    font-size: 18px;
+}
+
+.gradient-hr {
+    height: 3px;
+    background: linear-gradient(-45deg, #06B67A, #04fea7, #ff0000);
+}
+
+.footer {
+    padding: 30px 0;
+}
+
+.copyright {
+    font-size: 18px;
 }
