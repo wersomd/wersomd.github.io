@@ -610,6 +610,8 @@ main.main#main {
     flex-direction: column;
     align-items: flex-start;
     row-gap: 20px;
+
+    background-color: #28282B;
 }
 
 .contact-title {
@@ -620,6 +622,7 @@ main.main#main {
 .contact-item {
     font-size: 18px;
     font-weight: 300;
+    color: #fff;
 }
 
 .gradient-hr {
