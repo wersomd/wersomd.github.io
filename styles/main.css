@@ -239,12 +239,14 @@ main.main#main {
 .hero-desc {
     font-size: 18px;
     line-height: 1.4;
+    font-weight: 300;
 }
 
 .hero-btn {
     background-color: #00FFA3;
-    color: #fff;
-    font-size: 20px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
     padding: 14px 16px;
     border-radius: 10px;
     border: 1px solid #00FFA3;
@@ -255,6 +257,7 @@ main.main#main {
 
 .hero-btn:hover {
     background: #000;
+    color: #00FFA3;
 }
 
 .hero-right {
@@ -283,13 +286,14 @@ main.main#main {
 }
 
 .services-title {
-    font-size: 32px;
+    font-size: 56px;
 }
 
 .services-desc {
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.2;
+    font-weight: 300;
 }
 
 .services-items {
@@ -358,13 +362,14 @@ main.main#main {
 
 .service-name {
     font-size: 26px;
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1.2;
 }
 
 .service-desc {
     font-size: 17px;
     line-height: 1.4;
+    font-weight: 400;
 }
 
 .portfolio {
@@ -372,18 +377,20 @@ main.main#main {
 }
 
 .portfolio-title {
-    font-size: 32px;
+    font-size: 56px;
 }
 
 .portfolio-subtitle {
     font-size: 26px;
-    padding-top: 60px;
+    padding-top: 50px;
+    font-weight: 600;
 }
 
 .portfolio-desc {
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.2;
+    font-weight: 300;
 }
 
 .portfolio-items {
@@ -518,13 +525,14 @@ main.main#main {
 
 
 .reviews-title {
-    font-size: 32px;
+    font-size: 56px;
 }
 
 .reviews-desc {
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.2;
+    font-weight: 300;
 }
 
 .reviews-items {
@@ -533,10 +541,6 @@ main.main#main {
 
 .contacts {
     padding: 30px 0;
-}
-
-.contacts-title {
-    font-size: 32px;
 }
 
 .contact-items {
@@ -609,12 +613,13 @@ main.main#main {
 }
 
 .contact-title {
-    font-size: 32px;
+    font-size: 56px;
 }
 
 .contact-desc,
 .contact-item {
     font-size: 18px;
+    font-weight: 300;
 }
 
 .gradient-hr {
