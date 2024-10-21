@@ -36,9 +36,8 @@ main.main#main {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 90%;
     margin: 0 auto;
-    padding: 0 15px;
 }
 
 .header {
@@ -135,6 +134,21 @@ main.main#main {
 
 .burger-line:nth-child(4) {
     top: 1rem;
+}
+
+.burger.is-active .burger-line:nth-child(1),
+.burger.is-active .burger-line:nth-child(4) {
+    top: 1.25rem;
+    width: 0%;
+    left: 50%;
+}
+
+.burger.is-active .burger-line:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.burger.is-active .burger-line:nth-child(3) {
+    transform: rotate(-45deg);
 }
 
 .menu-list {
@@ -245,12 +259,23 @@ main.main#main {
 
 .hero-right {
     width: 40%;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    animation: spin 100s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 .services {
@@ -271,9 +296,10 @@ main.main#main {
     margin-top: 32px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
 
     gap: 26px;
+
+    max-width: 100%;
 }
 
 .service-big {
@@ -300,6 +326,7 @@ main.main#main {
     background: url('../images/services/services-bg.jpg') center center/cover no-repeat;
 
     height: 280px;
+    width: 100%;
 
     border-radius: 18px;
 
@@ -359,7 +386,6 @@ main.main#main {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     gap: 15px;
 
     flex-wrap: wrap;
@@ -439,6 +465,25 @@ main.main#main {
     background-image: url('../images/portfolio/korkem-alem-bg.png');
 }
 
+.portfolio-item:nth-child(7) {
+    background-image: url('../images/portfolio/ak-bg.png');
+}
+
+.portfolio-item:nth-child(8) {
+    background-image: url('../images/portfolio/interro-bg.png');
+}
+
+.portfolio-item:nth-child(9) {
+    background-image: url('../images/portfolio/kub-bg.png');
+}
+
+.portfolio-item:nth-child(10) {
+    background-image: url('../images/portfolio/qazpro-bg.png');
+}
+
+.portfolio-item:nth-child(11) {
+    background-image: url('../images/portfolio/venlo-bg.png');
+}
 
 .reviews {
     padding: 30px 0;
@@ -558,4 +603,121 @@ main.main#main {
 
 .copyright {
     font-size: 18px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .burger {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu {
+        width: 100%;
+        max-height: 0rem;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: all 0.35s ease;
+    }
+
+    .menu.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 2rem 0;
+    }
+
+    .header-btn {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .services-items {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        gap: 20px;
+    }
+
+    .service-start,
+    .service-big,
+    .service-middle,
+    .service-bottom {
+        grid-column: auto;
+        grid-row-start: auto;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .hero-items {
+        flex-direction: column;
+    }
+
+    .hero-left,
+    .hero-right {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-desc {
+        font-size: 16px;
+    }
+
+    .portfolio-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .contact-items {
+        flex-direction: column;
+    }
+
+    .contact-left-content {
+        padding: 100px 0;
+    }
+
+    .contact-right-content {
+        padding: 50px 30px;
+    }
+
+
+    .service-name {
+        font-size: 22px;
+    }
+
+    .service-desc {
+        font-size: 16px;
+    }
+
+    .service-item {
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .portfolio-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+.none {
+    display: none;
 }
