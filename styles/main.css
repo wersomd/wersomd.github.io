@@ -375,6 +375,11 @@ main.main#main {
     font-size: 32px;
 }
 
+.portfolio-subtitle {
+    font-size: 26px;
+    padding-top: 60px;
+}
+
 .portfolio-desc {
     margin-top: 10px;
     font-size: 18px;
@@ -483,6 +488,26 @@ main.main#main {
 
 .portfolio-item:nth-child(11) {
     background-image: url('../images/portfolio/venlo-bg.png');
+}
+
+.support-item:nth-child(1) {
+    background-image: url('../images/portfolio/pythonrpa.png');
+}
+
+.support-item:nth-child(2) {
+    background-image: url('../images/portfolio/cronos.png');
+}
+
+.crm-item:nth-child(1) {
+    background-image: url('../images/portfolio/on-dev.jpg');
+}
+
+.crm-item:nth-child(2) {
+    background-image: url('../images/portfolio/on-dev.jpg');
+}
+
+.crm-item:nth-child(3) {
+    background-image: url('../images/portfolio/on-dev.jpg');
 }
 
 .reviews {
