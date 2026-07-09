@@ -207,15 +207,25 @@ function initMagnetic() {
     });
 }
 
-/* ---------- lead form (Formspree + WhatsApp fallback) ---------- */
+/* ---------- lead form (wediff endpoint + WhatsApp fallback) ---------- */
 function initForm() {
     const form = document.getElementById("lead-form");
     const note = document.getElementById("form-note");
     if (!form || !note) return;
 
+    const LEADS_ENDPOINT = "https://wediff.vercel.app/api/leads";
+    const LEADS_TOKEN = ""; // опционально: должен совпадать с LEADS_INBOUND_TOKEN в wediff
+
     const setNote = (msg, ok) => {
         note.textContent = msg;
         note.className = "form-note " + (ok ? "ok" : "err");
+    };
+
+    const toWhatsApp = (name, contact, message) => {
+        const text = encodeURIComponent(
+            `Заявка с сайта\nИмя: ${name}\nКонтакт: ${contact}\nЗадача: ${message || "—"}`
+        );
+        window.open(`https://wa.me/77070171318?text=${text}`, "_blank", "noopener");
     };
 
     form.addEventListener("submit", async (e) => {
@@ -224,38 +234,33 @@ function initForm() {
         const name = (data.get("name") || "").toString().trim();
         const contact = (data.get("contact") || "").toString().trim();
         const message = (data.get("message") || "").toString().trim();
+        const website = (data.get("website") || "").toString();
 
         if (!name || !contact) {
             setNote("Заполните имя и контакт.", false);
             return;
         }
 
-        // If Formspree endpoint isn't configured yet, fall back to WhatsApp.
-        if (form.action.includes("YOUR_FORM_ID")) {
-            const text = encodeURIComponent(
-                `Заявка с сайта\nИмя: ${name}\nКонтакт: ${contact}\nЗадача: ${message || "—"}`
-            );
-            window.open(`https://wa.me/77070171318?text=${text}`, "_blank", "noopener");
-            setNote("Открываем WhatsApp с вашей заявкой…", true);
-            form.reset();
-            return;
-        }
-
         try {
             setNote("Отправляем…", true);
-            const res = await fetch(form.action, {
+            const res = await fetch(LEADS_ENDPOINT, {
                 method: "POST",
-                body: data,
-                headers: { Accept: "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                    ...(LEADS_TOKEN ? { "x-lead-token": LEADS_TOKEN } : {}),
+                },
+                body: JSON.stringify({ name, contact, message, website, source: "wersomd.github.io" }),
             });
             if (res.ok) {
                 setNote("Заявка отправлена. Скоро свяжемся!", true);
                 form.reset();
             } else {
-                setNote("Не удалось отправить. Напишите в WhatsApp.", false);
+                setNote("Не удалось отправить — открываем WhatsApp.", false);
+                toWhatsApp(name, contact, message);
             }
         } catch {
-            setNote("Ошибка сети. Напишите в WhatsApp.", false);
+            setNote("Нет связи — открываем WhatsApp.", false);
+            toWhatsApp(name, contact, message);
         }
     });
 }
