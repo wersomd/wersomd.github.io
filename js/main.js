@@ -215,6 +215,7 @@ function initForm() {
 
     const LEADS_ENDPOINT = "https://wediff.vercel.app/api/leads";
     const LEADS_TOKEN = ""; // опционально: должен совпадать с LEADS_INBOUND_TOKEN в wediff
+    const formLoadedAt = Date.now(); // тайминг-ловушка: мгновенный сабмит = бот
 
     const setNote = (msg, ok) => {
         note.textContent = msg;
@@ -249,7 +250,7 @@ function initForm() {
                     "Content-Type": "application/json",
                     ...(LEADS_TOKEN ? { "x-lead-token": LEADS_TOKEN } : {}),
                 },
-                body: JSON.stringify({ name, contact, message, website, source: "wersomd.github.io" }),
+                body: JSON.stringify({ name, contact, message, website, elapsed: Date.now() - formLoadedAt, source: "wersomd.github.io" }),
             });
             if (res.ok) {
                 setNote("Заявка отправлена. Скоро свяжемся!", true);
