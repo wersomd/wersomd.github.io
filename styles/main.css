@@ -16,9 +16,6 @@
     --magenta: #ff2d95;
     --violet: #7b5cff;
 
-    --glow-cyan: 0 0 24px rgba(0, 229, 255, .35);
-    --glow-mag: 0 0 24px rgba(255, 45, 149, .35);
-
     --font-display: 'Space Grotesk', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
@@ -83,20 +80,6 @@ ol {
     width: 100%;
     height: 100%;
     pointer-events: none;
-}
-
-.scanlines {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: repeating-linear-gradient(to bottom,
-            rgba(255, 255, 255, .015) 0,
-            rgba(255, 255, 255, .015) 1px,
-            transparent 1px,
-            transparent 3px);
-    mix-blend-mode: overlay;
-    opacity: .5;
 }
 
 body::before {
@@ -186,11 +169,6 @@ main,
 .logo-text {
     position: relative;
     color: var(--text);
-    transition: text-shadow .3s;
-}
-
-.logo:hover .logo-text {
-    text-shadow: var(--glow-cyan);
 }
 
 .nav {
@@ -219,7 +197,6 @@ main,
     transform: scaleX(0);
     transform-origin: left;
     transition: transform .25s var(--ease);
-    box-shadow: var(--glow-cyan);
 }
 
 .nav-link:hover,
@@ -248,7 +225,6 @@ main,
 
 .nav-cta:hover {
     border-color: var(--cyan);
-    box-shadow: var(--glow-cyan);
     background: rgba(0, 229, 255, .06);
 }
 
@@ -257,22 +233,6 @@ main,
     height: 7px;
     border-radius: 50%;
     background: var(--cyan);
-    box-shadow: 0 0 0 0 rgba(0, 229, 255, .7);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 229, 255, .6);
-    }
-
-    70% {
-        box-shadow: 0 0 0 10px rgba(0, 229, 255, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
-    }
 }
 
 .burger {
@@ -347,7 +307,6 @@ main,
 
 .btn-ghost:hover {
     border-color: var(--magenta);
-    box-shadow: var(--glow-mag);
     color: #fff;
 }
 
@@ -431,7 +390,6 @@ main,
     font-size: clamp(2rem, 5vw, 2.8rem);
     line-height: 1;
     color: var(--text);
-    text-shadow: var(--glow-cyan);
 }
 
 .stat-label {
@@ -442,68 +400,12 @@ main,
     margin-top: 6px;
 }
 
-/* glitch text */
-.glitch {
-    position: relative;
-    color: var(--text);
-    display: inline-block;
-}
-
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-    clip-path: inset(0 0 0 0);
-}
-
-.glitch::before {
-    color: var(--cyan);
-    animation: glitch-a 3.2s infinite steps(2, end);
-    z-index: -1;
-}
-
-.glitch::after {
-    color: var(--magenta);
-    animation: glitch-b 2.6s infinite steps(2, end);
-    z-index: -2;
-}
-
-@keyframes glitch-a {
-
-    0%,
-    92%,
-    100% {
-        transform: translate(0);
-        clip-path: inset(0 0 0 0);
-    }
-
-    93% {
-        transform: translate(-2px, -1px);
-        clip-path: inset(0 0 60% 0);
-    }
-
-    96% {
-        transform: translate(2px, 1px);
-        clip-path: inset(50% 0 0 0);
-    }
-}
-
-@keyframes glitch-b {
-
-    0%,
-    90%,
-    100% {
-        transform: translate(0);
-    }
-
-    94% {
-        transform: translate(2px, 1px);
-    }
-
-    97% {
-        transform: translate(-2px, -1px);
-    }
+/* accent keyword */
+.accent-text {
+    background: linear-gradient(135deg, var(--cyan), var(--violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 /* scroll hint */
@@ -706,12 +608,11 @@ main,
     display: block;
     line-height: 1;
     margin-bottom: 18px;
-    transition: color .3s, text-shadow .3s;
+    transition: color .3s;
 }
 
 .step:hover .step-num {
     color: var(--cyan);
-    text-shadow: var(--glow-cyan);
 }
 
 .step-title {
@@ -791,7 +692,7 @@ main,
     font-weight: 600;
     font-size: 1.15rem;
     color: var(--text);
-    transition: color .25s, text-shadow .25s;
+    transition: color .25s;
 }
 
 .proj-meta {
@@ -816,7 +717,6 @@ a.proj-row:hover {
 
 a.proj-row:hover .proj-name {
     color: #fff;
-    text-shadow: var(--glow-cyan);
 }
 
 a.proj-row:hover .proj-arrow {
@@ -923,11 +823,11 @@ a.proj-row:hover .proj-arrow {
 .contact-v {
     font-size: 1.05rem;
     color: var(--text);
-    transition: text-shadow .25s;
+    transition: color .25s;
 }
 
 .contact-list a:hover .contact-v {
-    text-shadow: var(--glow-cyan);
+    color: var(--cyan);
 }
 
 .lead-form {
@@ -1022,12 +922,11 @@ a.proj-row:hover .proj-arrow {
 
 .footer-links a {
     color: var(--muted);
-    transition: color .2s, text-shadow .2s;
+    transition: color .2s;
 }
 
 .footer-links a:hover {
     color: var(--cyan);
-    text-shadow: var(--glow-cyan);
 }
 
 .footer-copy {
